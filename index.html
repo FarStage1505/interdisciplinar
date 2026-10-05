@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Sistema</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            background: #090909;
+
+            color: #ffffff;
+        }
+
+        button,
+        input {
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .escondido {
+            display: none !important;
+        }
+
+
+        /* =========================
+           TELA DE LOGIN
+        ========================== */
+
+        .tela {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .subtitulo {
+            color: #999999;
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           CARD
+        ========================== */
+
+        .card {
+            width: 100%;
+
+            background: #121212;
+
+            border: 1px solid #2d2d2d;
+
+            border-radius: 16px;
+
+            padding: 30px;
+
+            text-align: left;
+        }
+
+
+        /* =========================
+           BOTÃO GOOGLE
+        ========================== */
+
+        .botao-google {
+            width: 100%;
+            height: 48px;
+
+            background: transparent;
+
+            color: #ffffff;
+
+            border: 1px solid #303030;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+        }
+
+        .botao-google:hover {
+            background: #1a1a1a;
+        }
+
+        .google {
+            color: #4285f4;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           DIVISOR
+        ========================== */
+
+        .divisor {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 25px 0;
+        }
+
+        .divisor::before,
+        .divisor::after {
+            content: "";
+
+            height: 1px;
+
+            background: #303030;
+
+            flex: 1;
+        }
+
+        .divisor span {
+            color: #999999;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           CAMPOS
+        ========================== */
+
+        label {
+            display: block;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+
+            height: 48px;
+
+            background: #181818;
+
+            color: #ffffff;
+
+            border: 1px solid #303030;
+
+            border-radius: 10px;
+
+            padding: 0 14px;
+
+            font-size: 14px;
+
+            outline: none;
+
+            margin-bottom: 18px;
+        }
+
+        input::placeholder {
+            color: #777777;
+        }
+
+        input:focus {
+            border-color: #ff591d;
+        }
+
+
+        /* =========================
+           BOTÃO PRINCIPAL
+        ========================== */
+
+        .botao-principal {
+            width: 100%;
+
+            height: 48px;
+
+            background: #ff1d1d;
+
+            color: #ffffff;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-top: 3px;
+        }
+
+        .botao-principal:hover {
+            background: #f19292;
+        }
+
+
+        /* =========================
+           LINKS
+        ========================== */
+
+        .link {
+            width: 100%;
+
+            margin-top: 20px;
+
+            background: transparent;
+
+            border: none;
+
+            color: #ff591d;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .link:hover {
+            color: #964223;
+        }
+
+        .texto-final {
+            margin-top: 23px;
+
+            color: #aaaaaa;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MENSAGEM
+        ========================== */
+
+        .mensagem {
+            color: #ff5c5c;
+
+            font-size: 13px;
+
+            text-align: center;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           DASHBOARD
+        ========================== */
+
+        .dashboard {
+            min-height: 100vh;
+
+            padding: 30px;
+        }
+
+        .topo {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #292929;
+
+            padding-bottom: 20px;
+        }
+
+        .topo h1 {
+            font-size: 28px;
+        }
+
+        .botao-sair {
+            background: #121212;
+
+            color: #ffffff;
+
+            border: 1px solid #303030;
+
+            border-radius: 8px;
+
+            padding: 10px 18px;
+        }
+
+        .botao-sair:hover {
+            color: #ff591d;
+
+            border-color: #ff591d;
+        }
+
+        .conteudo-dashboard {
+            max-width: 1200px;
+
+            margin: 50px auto;
+        }
+
+        .cartao-dashboard {
+            background: #121212;
+
+            border: 1px solid #292929;
+
+            border-radius: 12px;
+
+            padding: 25px;
+        }
+
+        .cartao-dashboard h2 {
+            margin-bottom: 10px;
+        }
+
+        .cartao-dashboard p {
+            color: #999999;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================== */
+
+        @media (max-width: 500px) {
+
+            .card {
+                padding: 22px;
+            }
+
+            .titulo {
+                font-size: 26px;
+            }
+
+            .dashboard {
+                padding: 20px;
+            }
+
+            .topo h1 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         TELA DE LOGIN
+    ====================================================== -->
+
+    <section id="telaLogin" class="tela">
+
+        <div class="container">
+
+            <h1 class="titulo">
+                Bem-vindo ao Y-Finance
+            </h1>
+
+            <p class="subtitulo">
+                Entre na sua conta ou cadastre-se para continuar
+            </p>
+
+
+            <form id="formLogin" class="card">
+
+
+                <!-- LOGIN COM GOOGLE -->
+
+                <button
+                    type="button"
+                    class="botao-google"
+                    onclick="loginGoogle()"
+                >
+
+                    <span class="google">
+                        G
+                    </span>
+
+                    Entrar com Google
+
+                </button>
+
+
+                <!-- DIVISOR -->
+
+                <div class="divisor">
+
+                    <span>
+                        OU
+                    </span>
+
+                </div>
+
+
+                <!-- E-MAIL -->
+
+                <label for="emailLogin">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="emailLogin"
+                    placeholder="voce@exemplo.com"
+                >
+
+
+                <!-- SENHA -->
+
+                <label for="senhaLogin">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="senhaLogin"
+                    placeholder="Digite sua senha"
+                >
+
+
+                <!-- ESQUECI A SENHA -->
+
+                <button
+                    type="button"
+                    class="link"
+                    onclick="mostrarTela('recuperacao')"
+                >
+                    Esqueci minha senha
+                </button>
+
+
+                <!-- MENSAGEM -->
+
+                <p
+                    id="erroLogin"
+                    class="mensagem"
+                ></p>
+
+
+                <!-- ENTRAR -->
+
+                <button
+                    type="submit"
+                    class="botao-principal"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+
+            <!-- CADASTRO -->
+
+            <p class="texto-final">
+
+                Ainda não possui uma conta?
+
+                <button
+                    type="button"
+                    class="link"
+                    onclick="mostrarTela('cadastro')"
+                >
+                    Criar uma conta
+                </button>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TELA DE CADASTRO
+    ====================================================== -->
+
+    <section
+        id="telaCadastro"
+        class="tela escondido"
+    >
+
+        <div class="container">
+
+            <h1 class="titulo">
+                Criar sua conta
+            </h1>
+
+            <p class="subtitulo">
+                Preencha os dados abaixo para começar
+            </p>
+
+
+            <form
+                id="formCadastro"
+                class="card"
+            >
+
+
+                <!-- GOOGLE -->
+
+                <button
+                    type="button"
+                    class="botao-google"
+                    onclick="loginGoogle()"
+                >
+
+                    <span class="google">
+                        G
+                    </span>
+
+                    Cadastrar com Google
+
+                </button>
+
+
+                <!-- DIVISOR -->
+
+                <div class="divisor">
+
+                    <span>
+                        OU
+                    </span>
+
+                </div>
+
+
+                <!-- E-MAIL -->
+
+                <label for="emailCadastro">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="emailCadastro"
+                    placeholder="voce@exemplo.com"
+                >
+
+
+                <!-- SENHA -->
+
+                <label for="senhaCadastro">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="senhaCadastro"
+                    placeholder="Crie uma senha"
+                >
+
+
+                <!-- CONFIRMAR SENHA -->
+
+                <label for="confirmarSenha">
+                    Confirmar senha
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    placeholder="Digite a senha novamente"
+                >
+
+
+                <!-- MENSAGEM -->
+
+                <p
+                    id="erroCadastro"
+                    class="mensagem"
+                ></p>
+
+
+                <!-- CADASTRAR -->
+
+                <button
+                    type="submit"
+                    class="botao-principal"
+                >
+                    Criar minha conta
+                </button>
+
+            </form>
+
+
+            <!-- VOLTAR PARA LOGIN -->
+
+            <p class="texto-final">
+
+                Já possui uma conta?
+
+                <button
+                    type="button"
+                    class="link"
+                    onclick="mostrarTela('login')"
+                >
+                    Entrar
+
+                </button>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TELA DE RECUPERAÇÃO DE SENHA
+    ====================================================== -->
+
+    <section
+        id="telaRecuperacao"
+        class="tela escondido"
+    >
+
+        <div class="container">
+
+            <h1 class="titulo">
+                Recuperar senha
+            </h1>
+
+            <p class="subtitulo">
+                Informe seu e-mail para receber as instruções
+            </p>
+
+
+            <form
+                id="formRecuperacao"
+                class="card"
+            >
+
+                <label for="emailRecuperacao">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="emailRecuperacao"
+                    placeholder="voce@exemplo.com"
+                >
+
+
+                <p
+                    id="mensagemRecuperacao"
+                    class="mensagem"
+                ></p>
+
+
+                <button
+                    type="submit"
+                    class="botao-principal"
+                >
+                    Enviar instruções
+                </button>
+
+            </form>
+
+
+            <p class="texto-final">
+
+                <button
+                    type="button"
+                    class="link"
+                    onclick="mostrarTela('login')"
+                >
+                    Voltar para o login
+                </button>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
+
+    <section
+        id="telaDashboard"
+        class="dashboard escondido"
+    >
+
+
+        <div class="topo">
+
+            <h1>
+                Dashboard
+            </h1>
+
+            <button
+                type="button"
+                class="botao-sair"
+                onclick="mostrarTela('login')"
+            >
+                Sair
+            </button>
+
+        </div>
+
+
+        <div class="conteudo-dashboard">
+
+            <div class="cartao-dashboard">
+
+                <h2>
+                    Bem-vindo ao sistema!
+                </h2>
+
+                <p>
+                    Você entrou com sucesso na sua conta.
+                </p>
+
+                <p>
+                    Esta é a versão inicial do Dashboard.
+                    Em seguida, vamos criar todas as funções
+                    e informações dessa tela.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =========================
+           TROCAR DE TELA
+        ========================== */
+
+        function mostrarTela(tela) {
+
+            document
+                .getElementById("telaLogin")
+                .classList.add("escondido");
+
+            document
+                .getElementById("telaCadastro")
+                .classList.add("escondido");
+
+            document
+                .getElementById("telaRecuperacao")
+                .classList.add("escondido");
+
+            document
+                .getElementById("telaDashboard")
+                .classList.add("escondido");
+
+
+            if (tela === "login") {
+
+                document
+                    .getElementById("telaLogin")
+                    .classList.remove("escondido");
+
+            }
+
+
+            if (tela === "cadastro") {
+
+                document
+                    .getElementById("telaCadastro")
+                    .classList.remove("escondido");
+
+            }
+
+
+            if (tela === "recuperacao") {
+
+                document
+                    .getElementById("telaRecuperacao")
+                    .classList.remove("escondido");
+
+            }
+
+
+            if (tela === "dashboard") {
+
+                document
+                    .getElementById("telaDashboard")
+                    .classList.remove("escondido");
+
+            }
+
+        }
+
+
+
+        /* =========================
+           CADASTRO
+        ========================== */
+
+        document
+            .getElementById("formCadastro")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document
+                        .getElementById("emailCadastro")
+                        .value
+                        .trim();
+
+
+                const senha =
+                    document
+                        .getElementById("senhaCadastro")
+                        .value;
+
+
+                const confirmar =
+                    document
+                        .getElementById("confirmarSenha")
+                        .value;
+
+
+                const erro =
+                    document
+                        .getElementById("erroCadastro");
+
+
+                /* Verificar campos vazios */
+
+                if (
+                    email === "" ||
+                    senha === "" ||
+                    confirmar === ""
+                ) {
+
+                    erro.textContent =
+                        "Preencha todos os campos.";
+
+                    return;
+
+                }
+
+
+                /* Verificar senha */
+
+                if (senha.length < 6) {
+
+                    erro.textContent =
+                        "A senha precisa ter pelo menos 6 caracteres.";
+
+                    return;
+
+                }
+
+
+                /* Verificar confirmação */
+
+                if (senha !== confirmar) {
+
+                    erro.textContent =
+                        "As senhas não são iguais.";
+
+                    return;
+
+                }
+
+
+                /* Colocar e-mail no login */
+
+                document
+                    .getElementById("emailLogin")
+                    .value = email;
+
+
+                /* Limpar cadastro */
+
+                document
+                    .getElementById("formCadastro")
+                    .reset();
+
+
+                erro.textContent = "";
+
+
+                /* Cadastro -> Login */
+
+                mostrarTela("login");
+
+
+                alert(
+                    "Sua conta foi criada com sucesso!"
+                );
+
+            });
+
+
+
+        /* =========================
+           LOGIN
+        ========================== */
+
+        document
+            .getElementById("formLogin")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document
+                        .getElementById("emailLogin")
+                        .value
+                        .trim();
+
+
+                const senha =
+                    document
+                        .getElementById("senhaLogin")
+                        .value;
+
+
+                const erro =
+                    document
+                        .getElementById("erroLogin");
+
+
+                /* Verificar campos */
+
+                if (
+                    email === "" ||
+                    senha === ""
+                ) {
+
+                    erro.textContent =
+                        "Digite seu e-mail e sua senha.";
+
+                    return;
+
+                }
+
+
+                erro.textContent = "";
+
+
+                /* Login -> Dashboard */
+
+                mostrarTela("dashboard");
+
+            });
+
+
+
+        /* =========================
+           RECUPERAÇÃO DE SENHA
+        ========================== */
+
+        document
+            .getElementById("formRecuperacao")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document
+                        .getElementById("emailRecuperacao")
+                        .value
+                        .trim();
+
+
+                const mensagem =
+                    document
+                        .getElementById("mensagemRecuperacao");
+
+
+                if (email === "") {
+
+                    mensagem.textContent =
+                        "Digite seu e-mail.";
+
+                    return;
+
+                }
+
+
+                mensagem.style.color = "#28d17c";
+
+                mensagem.textContent =
+                    "As instruções foram enviadas para seu e-mail.";
+
+            });
+
+
+
+        /* =========================
+           GOOGLE
+        ========================== */
+
+        function loginGoogle() {
+
+            alert(
+                "A entrada com Google será configurada em uma próxima etapa."
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
