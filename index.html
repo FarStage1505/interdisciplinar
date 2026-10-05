@@ -8,9 +8,7 @@
 
     <style>
 
-        /* =========================
-           CONFIGURAÇÕES GERAIS
-        ========================== */
+
 
         * {
             margin: 0;
@@ -42,9 +40,7 @@
         }
 
 
-        /* =========================
-           TELA DE LOGIN
-        ========================== */
+
 
         .tela {
             min-height: 100vh;
@@ -76,9 +72,6 @@
         }
 
 
-        /* =========================
-           CARD
-        ========================== */
 
         .card {
             width: 100%;
@@ -95,9 +88,7 @@
         }
 
 
-        /* =========================
-           BOTÃO GOOGLE
-        ========================== */
+
 
         .botao-google {
             width: 100%;
@@ -133,9 +124,6 @@
         }
 
 
-        /* =========================
-           DIVISOR
-        ========================== */
 
         .divisor {
             display: flex;
@@ -164,9 +152,6 @@
         }
 
 
-        /* =========================
-           CAMPOS
-        ========================== */
 
         label {
             display: block;
@@ -209,9 +194,6 @@
         }
 
 
-        /* =========================
-           BOTÃO PRINCIPAL
-        ========================== */
 
         .botao-principal {
             width: 100%;
@@ -238,9 +220,6 @@
         }
 
 
-        /* =========================
-           LINKS
-        ========================== */
 
         .link {
             width: 100%;
@@ -271,9 +250,7 @@
         }
 
 
-        /* =========================
-           MENSAGEM
-        ========================== */
+
 
         .mensagem {
             color: #ff5c5c;
@@ -285,10 +262,6 @@
             margin-bottom: 10px;
         }
 
-
-        /* =========================
-           DASHBOARD
-        ========================== */
 
         .dashboard {
             min-height: 100vh;
@@ -359,9 +332,7 @@
         }
 
 
-        /* =========================
-           CELULAR
-        ========================== */
+
 
         @media (max-width: 500px) {
 
@@ -390,9 +361,7 @@
 <body>
 
 
-    <!-- =====================================================
-         TELA DE LOGIN
-    ====================================================== -->
+    <!-- Logas -->
 
     <section id="telaLogin" class="tela">
 
@@ -410,7 +379,7 @@
             <form id="formLogin" class="card">
 
 
-                <!-- LOGIN COM GOOGLE -->
+    
 
                 <button
                     type="button"
@@ -438,8 +407,6 @@
                 </div>
 
 
-                <!-- E-MAIL -->
-
                 <label for="emailLogin">
                     E-mail
                 </label>
@@ -451,7 +418,7 @@
                 >
 
 
-                <!-- SENHA -->
+       
 
                 <label for="senhaLogin">
                     Senha
@@ -464,7 +431,7 @@
                 >
 
 
-                <!-- ESQUECI A SENHA -->
+      
 
                 <button
                     type="button"
@@ -475,7 +442,7 @@
                 </button>
 
 
-                <!-- MENSAGEM -->
+
 
                 <p
                     id="erroLogin"
@@ -483,7 +450,7 @@
                 ></p>
 
 
-                <!-- ENTRAR -->
+   
 
                 <button
                     type="submit"
@@ -495,7 +462,7 @@
             </form>
 
 
-            <!-- CADASTRO -->
+
 
             <p class="texto-final">
 
@@ -517,9 +484,7 @@
 
 
 
-    <!-- =====================================================
-         TELA DE CADASTRO
-    ====================================================== -->
+    <!-- Cadas -->
 
     <section
         id="telaCadastro"
@@ -543,7 +508,7 @@
             >
 
 
-                <!-- GOOGLE -->
+         
 
                 <button
                     type="button"
@@ -560,7 +525,7 @@
                 </button>
 
 
-                <!-- DIVISOR -->
+
 
                 <div class="divisor">
 
@@ -571,7 +536,6 @@
                 </div>
 
 
-                <!-- E-MAIL -->
 
                 <label for="emailCadastro">
                     E-mail
@@ -584,8 +548,7 @@
                 >
 
 
-                <!-- SENHA -->
-
+     
                 <label for="senhaCadastro">
                     Senha
                 </label>
@@ -597,7 +560,7 @@
                 >
 
 
-                <!-- CONFIRMAR SENHA -->
+             
 
                 <label for="confirmarSenha">
                     Confirmar senha
@@ -610,7 +573,6 @@
                 >
 
 
-                <!-- MENSAGEM -->
 
                 <p
                     id="erroCadastro"
@@ -618,7 +580,7 @@
                 ></p>
 
 
-                <!-- CADASTRAR -->
+            
 
                 <button
                     type="submit"
@@ -630,7 +592,6 @@
             </form>
 
 
-            <!-- VOLTAR PARA LOGIN -->
 
             <p class="texto-final">
 
@@ -653,9 +614,7 @@
 
 
 
-    <!-- =====================================================
-         TELA DE RECUPERAÇÃO DE SENHA
-    ====================================================== -->
+
 
     <section
         id="telaRecuperacao"
@@ -723,9 +682,7 @@
 
 
 
-    <!-- =====================================================
-         DASHBOARD
-    ====================================================== -->
+    <!-- Dashas temporário -->
 
     <section
         id="telaDashboard"
@@ -776,17 +733,12 @@
 
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+    <!-- JAVAS -->
 
     <script>
 
 
-        /* =========================
-           TROCAR DE TELA
-        ========================== */
-
+        
         function mostrarTela(tela) {
 
             document
@@ -845,9 +797,7 @@
 
 
 
-        /* =========================
-           CADASTRO
-        ========================== */
+
 
         document
             .getElementById("formCadastro")
@@ -880,7 +830,7 @@
                         .getElementById("erroCadastro");
 
 
-                /* Verificar campos vazios */
+
 
                 if (
                     email === "" ||
@@ -896,7 +846,7 @@
                 }
 
 
-                /* Verificar senha */
+             
 
                 if (senha.length < 6) {
 
@@ -908,7 +858,7 @@
                 }
 
 
-                /* Verificar confirmação */
+
 
                 if (senha !== confirmar) {
 
@@ -920,14 +870,14 @@
                 }
 
 
-                /* Colocar e-mail no login */
+    
 
                 document
                     .getElementById("emailLogin")
                     .value = email;
 
 
-                /* Limpar cadastro */
+              
 
                 document
                     .getElementById("formCadastro")
@@ -937,7 +887,6 @@
                 erro.textContent = "";
 
 
-                /* Cadastro -> Login */
 
                 mostrarTela("login");
 
@@ -950,9 +899,7 @@
 
 
 
-        /* =========================
-           LOGIN
-        ========================== */
+      
 
         document
             .getElementById("formLogin")
@@ -979,7 +926,7 @@
                         .getElementById("erroLogin");
 
 
-                /* Verificar campos */
+                
 
                 if (
                     email === "" ||
@@ -997,17 +944,14 @@
                 erro.textContent = "";
 
 
-                /* Login -> Dashboard */
-
+       
                 mostrarTela("dashboard");
 
             });
 
 
 
-        /* =========================
-           RECUPERAÇÃO DE SENHA
-        ========================== */
+
 
         document
             .getElementById("formRecuperacao")
@@ -1047,9 +991,6 @@
 
 
 
-        /* =========================
-           GOOGLE
-        ========================== */
 
         function loginGoogle() {
 
